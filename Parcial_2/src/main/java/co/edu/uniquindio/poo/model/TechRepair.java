@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class TechRepair {
     private final String nombre;
@@ -69,5 +70,16 @@ public class TechRepair {
 
     public void setListaRepuestos(ArrayList<Repuesto> listaRepuestos) {
         this.listaRepuestos = listaRepuestos;
+    }
+
+    public String registrarCliente(Cliente cliente){
+        Optional<Cliente>encontrado=buscarCliente(cliente.getDocumento());
+        if (encontrado.isEmpty()){
+            listaClientes.add(cliente);
+            return "Cliente registrado con exito";
+        }
+    }
+    public Optional<Cliente>buscarCliente(String documento){
+        return listaClientes.stream().filter(c -> c.getDocumento(documento)).findFirst();
     }
 }
