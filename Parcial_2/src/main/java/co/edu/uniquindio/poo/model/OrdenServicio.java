@@ -23,4 +23,44 @@ public class OrdenServicio {
         this.listaDetalles = listaDetalles;
         this.ownedByTechRepair = ownedByTechRepair;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public LocalDate getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public EstadoOrden getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoOrden estado) {
+        this.estado = estado;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public ArrayList<DetalleServicio> getListaDetalles() {
+        return listaDetalles;
+    }
+
+    public void setListaDetalles(ArrayList<DetalleServicio> listaDetalles) {
+        this.listaDetalles = listaDetalles;
+    }
+
+    public TechRepair getOwnedByTechRepair() {
+        return ownedByTechRepair;
+    }
+
+    public void setOwnedByTechRepair(TechRepair ownedByTechRepair) {
+        this.ownedByTechRepair = ownedByTechRepair;
+    }
 }
