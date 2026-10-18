@@ -44,5 +44,12 @@ public class DetalleReparacion extends DetalleServicio{
         return valor;
     }
 
+    @Override
+    public String toString() {
+        return "DetalleReparacion{" +
+                "repuestosUtilizados=" + repuestosUtilizados +
+                '}';
+    }
+
 
 }

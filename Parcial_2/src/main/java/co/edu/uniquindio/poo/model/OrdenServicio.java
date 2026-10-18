@@ -93,4 +93,17 @@ public class OrdenServicio {
     public boolean estaFinalizado(){
         return estado.equals(EstadoOrden.FINALIZADA);
     }
+
+    @Override
+    public String toString() {
+        return "OrdenServicio{" +
+                "codigo='" + codigo + '\'' +
+                ", fechaCreacion=" + fechaCreacion +
+                ", observaciones='" + observaciones + '\'' +
+                ", estado=" + estado +
+                ", cliente=" + cliente +
+                ", listaDetalles=" + listaDetalles +
+                ", ownedByTechRepair=" + ownedByTechRepair +
+                '}';
+    }
 }

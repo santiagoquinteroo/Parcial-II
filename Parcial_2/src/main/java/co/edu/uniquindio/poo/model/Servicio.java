@@ -31,4 +31,13 @@ public abstract class Servicio {
 
     public abstract double calcularCostoFinal(DetalleServicio detalleServicio);
 
+    @Override
+    public String toString() {
+        return "Servicio{" +
+                "codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", tarifaBase=" + tarifaBase +
+                '}';
+    }
 }

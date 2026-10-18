@@ -52,4 +52,14 @@ public class ComputadorPortatil extends EquipoTecnologico{
     public String obtenerCategoria() {
         return "Portátil";
     }
+
+    @Override
+    public String toString() {
+        return "ComputadorPortatil{" +
+                "tamanoPantallaPulgadas=" + tamanoPantallaPulgadas +
+                ", memoriaRAM=" + memoriaRAM +
+                ", capacidadAlmacenamiento=" + capacidadAlmacenamiento +
+                ", bateriaExtraible=" + bateriaExtraible +
+                '}';
+    }
 }

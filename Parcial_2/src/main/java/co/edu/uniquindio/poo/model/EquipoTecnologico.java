@@ -72,4 +72,16 @@ public abstract class EquipoTecnologico {
 
     public abstract String obtenerCategoria();
 
+    @Override
+    public String toString() {
+        return "EquipoTecnologico{" +
+                "codigo='" + codigo + '\'' +
+                ", numeroSerie='" + numeroSerie + '\'' +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", anoFabricacion=" + anoFabricacion +
+                ", estadoFisico='" + estadoFisico + '\'' +
+                ", ownedByCliente=" + ownedByCliente +
+                '}';
+    }
 }

@@ -16,4 +16,11 @@ public class Diagnostico extends Servicio{
     public double calcularCostoFinal(DetalleServicio detalleServicio) {
         return costoFijo;
     }
+
+    @Override
+    public String toString() {
+        return "Diagnostico{" +
+                "costoFijo=" + costoFijo +
+                '}';
+    }
 }

@@ -38,4 +38,14 @@ public class RepuestoUtilizado {
         return precioPorUnidad*cantidad;
 
     }
+
+    @Override
+    public String toString() {
+        return "RepuestoUtilizado{" +
+                "cantidad=" + cantidad +
+                ", precioPorUnidad=" + precioPorUnidad +
+                ", repuesto=" + repuesto +
+                ", ownedByDetalleReparacion=" + ownedByDetalleReparacion +
+                '}';
+    }
 }

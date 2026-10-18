@@ -65,5 +65,16 @@ public class Cliente {
         return listaEquipos.stream().filter(e -> e.getCodigo().equalsIgnoreCase(codigoRegistro)).findFirst();
     }
 
-
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "documento='" + documento + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", listaEquipos=" + listaEquipos +
+                ", listaOrdenes=" + listaOrdenes +
+                ", ownedByTechRepair=" + ownedByTechRepair +
+                '}';
+    }
 }

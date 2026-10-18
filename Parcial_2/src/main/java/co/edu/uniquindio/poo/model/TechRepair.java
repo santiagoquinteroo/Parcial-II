@@ -248,5 +248,16 @@ public class TechRepair {
         return criticos;
     }
 
-    
+    @Override
+    public String toString() {
+        return "TechRepair{" +
+                "nombre='" + nombre + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", listaClientes=" + listaClientes +
+                ", listaTecnicos=" + listaTecnicos +
+                ", listaOrdenes=" + listaOrdenes +
+                ", listaServicios=" + listaServicios +
+                ", listaRepuestos=" + listaRepuestos +
+                '}';
+    }
 }

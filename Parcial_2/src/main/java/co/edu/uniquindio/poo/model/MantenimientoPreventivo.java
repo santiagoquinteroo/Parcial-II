@@ -2,14 +2,14 @@ package co.edu.uniquindio.poo.model;
 
 public class MantenimientoPreventivo extends Servicio{
     private final double tarifaPortatil;
-    private final double tarifaTelefono;
+    private final double tarifaCelular;
     private final double tarifaEscritorio;
 
     public MantenimientoPreventivo(String codigo, String nombre, String descripcion, double tarifaBase,
-                                   double tarifaPortatil, double tarifaTelefono, double tarifaEscritorio) {
+                                   double tarifaPortatil, double tarifaCelular, double tarifaEscritorio) {
         super(codigo, nombre, descripcion, tarifaBase);
         this.tarifaPortatil = tarifaPortatil;
-        this.tarifaTelefono = tarifaTelefono;
+        this.tarifaCelular = tarifaCelular;
         this.tarifaEscritorio = tarifaEscritorio;
     }
 
@@ -18,7 +18,7 @@ public class MantenimientoPreventivo extends Servicio{
     }
 
     public double getTarifaTelefono() {
-        return tarifaTelefono;
+        return tarifaCelular;
     }
 
     public double getTarifaEscritorio() {
@@ -28,6 +28,21 @@ public class MantenimientoPreventivo extends Servicio{
 
     @Override
     public double calcularCostoFinal(DetalleServicio detalleServicio) {
-        if (detalleServicio.getEquipo())
+        if (detalleServicio.getEquipo().obtenerCategoria().equalsIgnoreCase("Portatil")){
+            return detalleServicio.getHorasTrabajo() * tarifaPortatil;
+        }
+        if (detalleServicio.getEquipo().obtenerCategoria().equalsIgnoreCase("Celular")){
+            return detalleServicio.getHorasTrabajo() * tarifaCelular;
+        }else return detalleServicio.getHorasTrabajo() * tarifaEscritorio;
+    }
+
+    @Override
+    public String toString() {
+        return "MantenimientoPreventivo{" +
+                "tarifaPortatil=" + tarifaPortatil +
+                ", tarifaCelular=" + tarifaCelular +
+                ", tarifaEscritorio=" + tarifaEscritorio +
+                '}';
     }
 }
+

@@ -72,4 +72,16 @@ public class Tecnico {
         }
         return  contador;
     }
+
+    @Override
+    public String toString() {
+        return "Tecnico{" +
+                "codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", documento='" + documento + '\'' +
+                ", especialidad=" + especialidad +
+                ", estadoLaboral=" + estadoLaboral +
+                ", detallesAsignados=" + detallesAsignados +
+                '}';
+    }
 }

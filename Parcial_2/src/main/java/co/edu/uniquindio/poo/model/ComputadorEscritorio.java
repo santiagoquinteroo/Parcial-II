@@ -52,4 +52,14 @@ public class ComputadorEscritorio extends EquipoTecnologico{
     public String obtenerCategoria() {
         return "Escritorio" ;
     }
+
+    @Override
+    public String toString() {
+        return "ComputadorEscritorio{" +
+                "tipoProcesador='" + tipoProcesador + '\'' +
+                ", memoriaRAM=" + memoriaRAM +
+                ", capacidadAlmacenamientoGB=" + capacidadAlmacenamientoGB +
+                ", tarjetaGraficaDelicada=" + tarjetaGraficaDelicada +
+                '}';
+    }
 }

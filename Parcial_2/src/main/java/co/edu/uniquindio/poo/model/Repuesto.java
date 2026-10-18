@@ -64,4 +64,16 @@ public class Repuesto {
             return true;
         }else  return false;
     }
+
+    @Override
+    public String toString() {
+        return "Repuesto{" +
+                "codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precioPorUnidad=" + precioPorUnidad +
+                ", cantidadDisponible=" + cantidadDisponible +
+                ", compatibilidad=" + compatibilidad +
+                '}';
+    }
 }

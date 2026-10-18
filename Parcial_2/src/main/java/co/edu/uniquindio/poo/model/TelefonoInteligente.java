@@ -42,4 +42,14 @@ public class TelefonoInteligente extends EquipoTecnologico{
     public String obtenerCategoria() {
         return "Celular";
     }
+
+    @Override
+    public String toString() {
+        return "TelefonoInteligente{" +
+                "sistemaOperativo='" + sistemaOperativo + '\'' +
+                ", almacenamientoGB=" + almacenamientoGB +
+                ", capacidadBateriaMah=" + capacidadBateriaMah +
+                ", compatible5G=" + compatible5G +
+                '}';
+    }
 }
