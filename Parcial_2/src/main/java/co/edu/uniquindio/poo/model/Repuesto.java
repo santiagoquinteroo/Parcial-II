@@ -48,4 +48,20 @@ public class Repuesto {
     public void setCompatibilidad(boolean compatibilidad) {
         this.compatibilidad = compatibilidad;
     }
+    public boolean verificarDisponibilidad(int cantidad){
+        if (cantidad>0 && cantidad <= cantidadDisponible){
+            return true;
+        }else return false;
+    }
+    public void descontar(int cantidad){
+        if (verificarDisponibilidad(cantidad)){
+            cantidadDisponible-=cantidad;
+        }
+
+    }
+    public boolean verificarCritico(){
+        if (cantidadDisponible<=5){
+            return true;
+        }else  return false;
+    }
 }

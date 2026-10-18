@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class OrdenServicio {
     private final String codigo;
@@ -62,5 +63,25 @@ public class OrdenServicio {
 
     public void setOwnedByTechRepair(TechRepair ownedByTechRepair) {
         this.ownedByTechRepair = ownedByTechRepair;
+    }
+
+    public String agregarDetalle (DetalleServicio detalle){
+        Optional<DetalleServicio>encontrado=buscarDetalle(detalle.getCodigo());
+        if (encontrado.isEmpty()){
+            listaDetalles.add(detalle);
+            return "Detalle registrado con exito";
+        }
+        return "Detalle ya existente";
+    }
+    public String eliminarDetalle (DetalleServicio detalle){
+        Optional<DetalleServicio>encontrado=buscarDetalle(detalle.getCodigo());
+        if (encontrado.isPresent()){
+            listaDetalles.remove(detalle);
+            return "Detalle registrado con exito";
+        }
+        return "Detalle ya existente";
+    }
+    public Optional<DetalleServicio>buscarDetalle(String codigo){
+        return listaDetalles.stream().filter(d -> d.getCodigo().equalsIgnoreCase(codigo)).findFirst();
     }
 }

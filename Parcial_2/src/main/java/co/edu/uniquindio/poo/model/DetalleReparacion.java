@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class DetalleReparacion extends DetalleServicio{
     private ArrayList<RepuestoUtilizado>repuestosUtilizados;
@@ -18,4 +19,23 @@ public class DetalleReparacion extends DetalleServicio{
     public void setRepuestosUtilizados(ArrayList<RepuestoUtilizado> repuestosUtilizados) {
         this.repuestosUtilizados = repuestosUtilizados;
     }
+    public String registrarRepuestoUtilizado(Repuesto repuesto, int cantidad) {
+        if (cantidad <= 0) {
+            return "La cantidad debe ser mayor a cero";
+        } else if (repuesto.verificarDisponibilidad(cantidad)==false) {
+            return "No hay existencias suficientes";
+        } else {
+            repuesto.descontar(cantidad);
+            repuestosUtilizados.add(new RepuestoUtilizado(cantidad, repuesto.getPrecioPorUnidad(), repuesto, this));
+            return "Repuesto registrado con exito";
+        }
+    }
+    public double calcularCostoRepuesto(){
+        double costo = 0;
+        for (RepuestoUtilizado r: repuestosUtilizados){
+            costo += r.calcularSubtotal();
+        }
+        return costo;
+    }
+
 }

@@ -83,4 +83,8 @@ public class DetalleServicio {
     public void setOwnedByOrdenServicio(OrdenServicio ownedByOrdenServicio) {
         this.ownedByOrdenServicio = ownedByOrdenServicio;
     }
+
+    public boolean estaFinalizado(){
+        return estado.equals(EstadoOrden.FINALIZADA);
+    }
 }

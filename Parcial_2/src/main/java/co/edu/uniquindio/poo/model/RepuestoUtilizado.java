@@ -33,4 +33,9 @@ public class RepuestoUtilizado {
     public void setOwnedByDetalleReparacion(DetalleReparacion ownedByDetalleReparacion) {
         this.ownedByDetalleReparacion = ownedByDetalleReparacion;
     }
+
+    public double calcularSubtotal(){
+        return precioPorUnidad*cantidad;
+
+    }
 }
