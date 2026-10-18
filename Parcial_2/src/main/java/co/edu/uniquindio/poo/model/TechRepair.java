@@ -238,5 +238,15 @@ public class TechRepair {
         }
         return reporte;
     }
+    public ArrayList<Repuesto> consultarInventarioCritico() {
+        ArrayList<Repuesto> criticos = new ArrayList<>();
+        for (Repuesto repuesto : listaRepuestos) {
+            if (repuesto.verificarCritico()) {
+                criticos.add(repuesto);
+            }
+        }
+        return criticos;
+    }
+
     
 }
