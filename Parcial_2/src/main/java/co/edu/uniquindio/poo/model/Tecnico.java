@@ -41,4 +41,35 @@ public class Tecnico {
     public ArrayList<DetalleServicio> getDetallesAsignados() {
         return detallesAsignados;
     }
+
+    public Boolean estaActivo(){
+        if (estadoLaboral.equals(EstadoLaboral.ACTIVO)){
+            return true;
+        }else return false;
+    }
+
+    public boolean estaAutorizadoPara(EquipoTecnologico equipo) {
+        String categoria = equipo.obtenerCategoria();
+        boolean autorizado = false;
+        if (especialidad.equals(Especialidad.ESPECIALISTA_GENERAL)) {
+            autorizado = true;
+        } else if (especialidad.equals(Especialidad.ESPECIALISTA_COMPUTADOR)) {
+            autorizado = categoria.equalsIgnoreCase("Portatil")
+                    || categoria.equals("Computado de escritorio");
+        } else if (especialidad.equals(Especialidad.ESPECIALISTA_MOVIL)) {
+            autorizado = categoria.equals("Celular");
+        }
+        return autorizado;
+    }
+
+    public int contarIntervencionesFinalizadas(){
+        int contador = 0;
+
+        for(DetalleServicio d : detallesAsignados){
+            if (d.estaFinalizado()){
+                contador++;
+            }
+        }
+        return  contador;
+    }
 }

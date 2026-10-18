@@ -24,4 +24,10 @@ public class MantenimientoPreventivo extends Servicio{
     public double getTarifaEscritorio() {
         return tarifaEscritorio;
     }
+
+
+    @Override
+    public double calcularCostoFinal(DetalleServicio detalleServicio) {
+        if (detalleServicio.getEquipo())
+    }
 }

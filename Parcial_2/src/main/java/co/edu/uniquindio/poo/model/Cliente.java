@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.model;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Cliente {
     private final String documento;
@@ -44,4 +45,25 @@ public class Cliente {
     public ArrayList<OrdenServicio> getListaOrdenes() {
         return listaOrdenes;
     }
+
+    public boolean validarDatos (){
+        return !documento.isEmpty() && !nombre.isEmpty() && !telefono.isEmpty() && !direccion.isEmpty();
+    }
+    public String registrarEquipo(EquipoTecnologico equipo) {
+        Optional<EquipoTecnologico> encontrado = buscarEquipo(equipo.getCodigo());
+        if (!equipo.validarAtributos()) {
+            return "Los datos del equipo no son validos";
+        } else if (encontrado.isPresent()) {
+            return "El equipo ya existe";
+        } else {
+            listaEquipos.add(equipo);
+            return "Registrado con exito";
+        }
+    }
+
+    public Optional<EquipoTecnologico> buscarEquipo(String codigoRegistro) {
+        return listaEquipos.stream().filter(e -> e.getCodigo().equalsIgnoreCase(codigoRegistro)).findFirst();
+    }
+
+
 }

@@ -28,4 +28,7 @@ public abstract class Servicio {
     public double getTarifaBase() {
         return tarifaBase;
     }
+
+    public abstract double calcularCostoFinal(DetalleServicio detalleServicio);
+
 }

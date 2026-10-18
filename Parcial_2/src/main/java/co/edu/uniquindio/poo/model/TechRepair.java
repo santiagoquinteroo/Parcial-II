@@ -169,5 +169,74 @@ public class TechRepair {
         }
         return trabajosTecnicos;
     }
+
+    public ArrayList<EquipoTecnologico> consultarEquiposPendientes(Cliente cliente){
+        ArrayList<EquipoTecnologico> equipos = new ArrayList<>();
+        for (Cliente c : listaClientes){
+            for (EquipoTecnologico e : c.getListaEquipos()){
+                if (e.verificarIntervencionesPendientes(cliente)){
+                equipos.add(e);
+                }
+            }
+        }
+        return equipos;
+    }
+
+    public String generarReporteServicios(){
+        double totalEscritorios = 0;
+        double totalPortatiles = 0;
+        double totalCelulares = 0;
+        int reparaciones = 0;
+        int mantenimientos = 0;
+        int diagnosticos = 0;
+
+        for (OrdenServicio o : listaOrdenes){
+            for (DetalleServicio d : o.getListaDetalles()){
+                if (d.estaFinalizado()){
+                    Servicio servicio = d.getServicio();
+                    if (servicio instanceof Diagnostico) {
+                        diagnosticos++;
+                    } else if (servicio instanceof MantenimientoPreventivo) {
+                        mantenimientos++;
+                    } else if (servicio instanceof ReperacionCorrectiva) {
+                        reparaciones++;
+                    }
+
+                    String categoria = d.getEquipo().obtenerCategoria();
+                    double valor = d.calcularValor();
+                    if (categoria.equalsIgnoreCase("Portatil")) {
+                        totalPortatiles += valor;
+                    } else if (categoria.equalsIgnoreCase("Escritorio")) {
+                        totalEscritorios += valor;
+                    } else if (categoria.equalsIgnoreCase("Celular")) {
+                        totalCelulares += valor;
+                    }
+                }
+            }
+        }
+        return "Servicios finalizados por tipo:\n" +
+                "  Diagnostico: " + diagnosticos + "\n" +
+                "  Mantenimiento preventivo: " + mantenimientos + "\n" +
+                "  Reparacion correctiva: " + reparaciones + "\n" +
+                "Total facturado por categoria de equipo:\n" +
+                "  Portatiles: " + totalPortatiles + "\n" +
+                "  Escritorio: " + totalEscritorios + "\n" +
+                "  Celulares: " + totalCelulares + "\n";
+    }
+
+    public String generarReporteTecnicos() {
+        String reporte = "Reporte de tecnicos:\n";
+        for (Tecnico tecnico : listaTecnicos) {
+            double valorServicios = 0;
+            for (DetalleServicio d : tecnico.getDetallesAsignados()) {
+                if (d.estaFinalizado()) {
+                    valorServicios += d.calcularValor();
+                }
+            }
+            reporte += tecnico.getNombre() + ": " + tecnico.contarIntervencionesFinalizadas()
+                    + " intervenciones finalizadas, valor de los servicios " + valorServicios + "\n";
+        }
+        return reporte;
+    }
     
 }

@@ -11,4 +11,10 @@ public class ReperacionCorrectiva extends Servicio{
     public double getTarifaManoObra() {
         return tarifaManoObra;
     }
+
+
+    @Override
+    public double calcularCostoFinal(DetalleServicio detalleServicio) {
+        return detalleServicio.getHorasTrabajo()*tarifaManoObra;
+    }
 }

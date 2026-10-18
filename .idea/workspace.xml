@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4dc488d-3d14-4316-a0c2-2ebe50823f51" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/DetalleReparacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/DetalleReparacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/OrdenServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/OrdenServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Repuesto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Repuesto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/RepuestoUtilizado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/RepuestoUtilizado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/ComputadorEscritorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/ComputadorEscritorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/ComputadorPortatil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/ComputadorPortatil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Diagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Diagnostico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/EquipoTecnologico.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/EquipoTecnologico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/MantenimientoPreventivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/MantenimientoPreventivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/ReperacionCorrectiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/ReperacionCorrectiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Servicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Servicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/TechRepair.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/TechRepair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Tecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/Tecnico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/TelefonoInteligente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Parcial_2/src/main/java/co/edu/uniquindio/poo/model/TelefonoInteligente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

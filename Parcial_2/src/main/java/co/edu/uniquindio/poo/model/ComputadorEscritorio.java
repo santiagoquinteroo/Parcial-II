@@ -42,4 +42,14 @@ public class ComputadorEscritorio extends EquipoTecnologico{
     public void setTarjetaGraficaDelicada(boolean tarjetaGraficaDelicada) {
         this.tarjetaGraficaDelicada = tarjetaGraficaDelicada;
     }
+
+    @Override
+    public boolean validarAtributos() {
+        return validarAtributosComunes() && !tipoProcesador.isEmpty() && memoriaRAM > 0 && capacidadAlmacenamientoGB > 0 ;
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Escritorio" ;
+    }
 }

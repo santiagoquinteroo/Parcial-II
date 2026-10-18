@@ -6,9 +6,9 @@ public class DetalleServicio {
     private short horasTrabajo;
     private String observacionesTecnicas;
     private EstadoOrden estado;
-    private final double valor;
+    private double valor;
     private final EquipoTecnologico equipo;
-    private final Tecnico tecnico;
+    private Tecnico tecnico;
     private final Servicio servicio;
 
     private OrdenServicio ownedByOrdenServicio;
@@ -93,6 +93,23 @@ public class DetalleServicio {
         return "Estado actualizado con exito";
     }
     public String asignarTecnico(Tecnico tecnico){
-        
+        if (!tecnico.estaActivo()){
+            return "Este técnico está inactivo no puede hacer ningún trabajo";
+        } else if (!tecnico.estaAutorizadoPara(equipo)) {
+            return "Este técnico no está autorizado para realizar trabajos sobre un: "+equipo.obtenerCategoria();
+        } else if (this.tecnico != null) {
+            this.tecnico.getDetallesAsignados().remove(this);
+        }
+        this.tecnico = tecnico;
+        tecnico.getDetallesAsignados().add(this);
+        return "Tecnico asignado con éxito";
     }
+
+    public double calcularValor(){
+        valor = servicio.calcularCostoFinal(this);
+        return valor;
+    }
+
 }
+
+

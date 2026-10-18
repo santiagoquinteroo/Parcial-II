@@ -84,4 +84,13 @@ public class OrdenServicio {
     public Optional<DetalleServicio>buscarDetalle(String codigo){
         return listaDetalles.stream().filter(d -> d.getCodigo().equalsIgnoreCase(codigo)).findFirst();
     }
+
+    public String actualizarEstado(EstadoOrden nuevoEstado){
+        estado = nuevoEstado;
+        return "Estado actualizado con éxito";
+    }
+
+    public boolean estaFinalizado(){
+        return estado.equals(EstadoOrden.FINALIZADA);
+    }
 }

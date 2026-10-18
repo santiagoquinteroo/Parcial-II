@@ -11,4 +11,9 @@ public class Diagnostico extends Servicio{
     public double getCostoFijo() {
         return costoFijo;
     }
+
+    @Override
+    public double calcularCostoFinal(DetalleServicio detalleServicio) {
+        return costoFijo;
+    }
 }

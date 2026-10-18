@@ -38,4 +38,11 @@ public class DetalleReparacion extends DetalleServicio{
         return costo;
     }
 
+    @Override
+    public double calcularValor() {
+        double valor = super.calcularValor() + calcularCostoRepuesto();
+        return valor;
+    }
+
+
 }

@@ -30,4 +30,16 @@ public class TelefonoInteligente extends EquipoTecnologico{
     public boolean isCompatible5G() {
         return compatible5G;
     }
+
+    @Override
+    public boolean validarAtributos() {
+        if (validarAtributosComunes() && !sistemaOperativo.isEmpty() && almacenamientoGB > 0 && capacidadBateriaMah > 0){
+            return true;
+        } else return false;
+    }
+
+    @Override
+    public String obtenerCategoria() {
+        return "Celular";
+    }
 }
