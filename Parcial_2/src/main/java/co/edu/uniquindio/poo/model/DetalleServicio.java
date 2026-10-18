@@ -87,4 +87,12 @@ public class DetalleServicio {
     public boolean estaFinalizado(){
         return estado.equals(EstadoOrden.FINALIZADA);
     }
+
+    public String actualizarEstado(EstadoOrden nuevoEstado){
+        estado = nuevoEstado;
+        return "Estado actualizado con exito";
+    }
+    public String asignarTecnico(Tecnico tecnico){
+        
+    }
 }
