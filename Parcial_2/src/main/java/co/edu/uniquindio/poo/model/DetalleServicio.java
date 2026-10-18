@@ -8,5 +8,7 @@ public class DetalleServicio {
     private EstadoOrden estado;
     private final double valor;
     private final EquipoTecnologico equipo;
+    private final Tecnico tecnico;
+
 
 }
