@@ -48,6 +48,9 @@ public class Main {
                     registrarCliente();
                     break;
                 case 2:
+                    registrarEquipo();
+                    break;
+                case 3:
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opción invalida");
@@ -86,8 +89,38 @@ public class Main {
         String modelo = JOptionPane.showInputDialog(null, "Modelo: ");
         short anoFabricacion = Short.parseShort(JOptionPane.showInputDialog(null, "Año de fabricación: "));
         String estadoFisico = JOptionPane.showInputDialog(null, "Estado físico: ");
-        
+
+        if (tipo == 1){
+            short tamanoPantallaPulgadas = Short.parseShort(JOptionPane.showInputDialog(null, "Tamaño de pantalla (en pulgadas): "));
+            short memoriaRAM = Short.parseShort(JOptionPane.showInputDialog(null, "Memoria RAM: "));
+            short almacenamientoGB = Short.parseShort(JOptionPane.showInputDialog(null, "Almacenamiento (en GB)"));
+            boolean bateriaExtraible = JOptionPane.showConfirmDialog(null, "¿La batería es extraíble?", "Pregunta", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
+
+            EquipoTecnologico equipo = new ComputadorPortatil(codigo, numeroSerie, marca, modelo, anoFabricacion, estadoFisico,
+                                                        tamanoPantallaPulgadas, memoriaRAM, almacenamientoGB, bateriaExtraible);
+        } else if (tipo == 2){
+            String procesador = JOptionPane.showInputDialog(null, "Procesador: ");
+            short memoriaRAM = Short.parseShort(JOptionPane.showInputDialog(null, "Memoria RAM: "));
+            short almacenamientoGB = Short.parseShort(JOptionPane.showInputDialog(null, "Almacenamiento (en GB)"));
+            boolean tarjetaGraficaDelicada = JOptionPane.showConfirmDialog(null, "La tarjeta gráfica es delicada?", "Pregunta", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
+
+            EquipoTecnologico equipo = new ComputadorEscritorio(codigo,numeroSerie, marca, modelo, anoFabricacion, estadoFisico, procesador, almacenamientoGB, memoriaRAM, tarjetaGraficaDelicada);
+
+        } else {
+            String sistemaOperativo = JOptionPane.showInputDialog(null, "Sistema operativo: ");
+            short almacenamientoGB = Short.parseShort(JOptionPane.showInputDialog(null, "Almacenamiento (en GB): "));
+            short capacidadBateriaMah = Short.parseShort(JOptionPane.showInputDialog(null, "Capacidad de batería (en Mah): "));
+            boolean compatible5G = JOptionPane.showConfirmDialog(null, "El celular es compatible con 5G?", "Pregunta", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
+
+            EquipoTecnologico equipo = new TelefonoInteligente(codigo, numeroSerie, marca, modelo, anoFabricacion, estadoFisico, sistemaOperativo, almacenamientoGB, capacidadBateriaMah, compatible5G);
+        }
     }
+
+
+
+
+
+    //--------------------------------------
     static Cliente buscarCliente() {
         Optional<Cliente> cliente = techRepair.buscarCliente(JOptionPane.showInputDialog(null, "Documento del cliente:"));
         if (cliente.isEmpty()) {
@@ -116,6 +149,8 @@ public class Main {
         }
         return detalle.get();
     }
+
+
 }
 
 
