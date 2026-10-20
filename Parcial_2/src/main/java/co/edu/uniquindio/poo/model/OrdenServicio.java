@@ -94,6 +94,14 @@ public class OrdenServicio {
         return estado.equals(EstadoOrden.FINALIZADA);
     }
 
+    public double calcularValorTotal() {
+        double total = 0;
+        for (DetalleServicio d : listaDetalles) {
+            total += d.calcularValor();
+        }
+        return total;
+    }
+
     @Override
     public String toString() {
         return "OrdenServicio{" +

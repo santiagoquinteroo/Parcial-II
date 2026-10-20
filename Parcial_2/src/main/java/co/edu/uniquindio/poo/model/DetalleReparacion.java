@@ -23,7 +23,7 @@ public class DetalleReparacion extends DetalleServicio{
         if (cantidad <= 0) {
             return "La cantidad debe ser mayor a cero";
         } else if (repuesto.verificarDisponibilidad(cantidad)==false) {
-            return "No hay existencias suficientes";
+            return "No hay repuestos suficientes";
         } else {
             repuesto.descontar(cantidad);
             repuestosUtilizados.add(new RepuestoUtilizado(cantidad, repuesto.getPrecioPorUnidad(), repuesto, this));
